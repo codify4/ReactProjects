@@ -30,7 +30,7 @@ export default function ToDoList() {
         <div className='to-do-list'>
             <h1>To Do List</h1>
             
-            <div>
+            <div className='input-container'>
                 <input type="text"  
                         placeholder='Enter a task...'
                         value={newTask}

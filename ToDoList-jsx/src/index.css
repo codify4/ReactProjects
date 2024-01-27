@@ -2,6 +2,9 @@
 
 body{
     background-color: rgb(31, 31, 31);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .to-do-list{
@@ -10,16 +13,95 @@ body{
     align-items: center;
     margin: 0;
     padding: 0;
-    width: 600px;
+    width: 700px;
 
     font-family: Roboto, sans-serif;
+    text-align: center;
     background-color: rgb(49, 49, 49);
     border-radius: 15px;
-    box-shadow: 5px 5px 5px rgba(39, 39, 39, 0.562);
-
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
 }
 
 h1{
     font-size: 3em;
     color: white;
+}
+
+input{
+    font-size: 1.5em;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(34, 34, 34);
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    color: white;
+    padding-left: 15px;
+    padding-right: 70px;
+    height: 50px;
+    width: 350px;
+}
+
+button{
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.add-button{
+    width: 50px;
+    height: 40px;
+    transform: translate(-120%, -8%);
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(139, 26, 26);
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    color: white;
+}
+.add-button:hover{
+    background-color: rgb(199, 39, 39);
+    transition: 0.2s ease;
+}
+.remove-button{
+    height: 35px;
+    background-color: rgb(143, 0, 0);
+    margin-left: 10px;
+}
+.remove-button:hover{
+    background-color: rgb(185, 0, 0);
+    transition: 0.2s ease;
+}
+.move-button{
+    height: 35px;
+    width: 50px;
+    background-color: rgb(34, 34, 34);
+    margin-left: 10px;
+}
+.move-button:hover{
+    background-color: rgb(59, 59, 59);
+    transition: 0.2s ease;
+}
+
+ol{
+    padding: 0;
+}
+
+li{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 15px;
+    background-color: rgb(34, 34, 34);
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    margin-bottom: 10px;
+    color: white;
+    width: 600px;
+
+    display: flex;
+    align-items: center;
+}
+
+.text{
+    flex: 1;
 }
