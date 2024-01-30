@@ -1,20 +1,20 @@
-import { useState, useEffect } from "react";
-import { MovieCard } from "./MovieCard";
-import './App.css';
+
+import React, { useState, useEffect } from "react";
+
+import MovieCard from "./MovieCard";
 import SearchIcon from './assets/search.svg';
+import './App.css';
+
 
 const API_URL = 'http://www.omdbapi.com/?apikey=14c7c1ec';
-const movie1 = {
-    "Title": "Batman Begins",
-    "Year": "2005",
-    "imdbID": "tt0372784",
-    "Type": "movie",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BOTY4YjI2N2MtYmFlMC00ZjcyLTg3YjEtMDQyM2ZjYzQ5YWFkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
-}
 
-export default function App() {
-  const [movies, setMovies] = useState([]);
+const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    searchMovies('Batman');
+  }, []);
 
   const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`);
@@ -23,17 +23,13 @@ export default function App() {
     setMovies(data.Search);
   }
 
-  useEffect(() => {
-    searchMovies('Batman');
-  }, []);
-
   return (
     <div className="app">
       <h1>IONIC Films</h1>
 
       <div className="search">
         <input 
-          placeholder="Search for movies"
+          placeholder="Search for movies..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -47,9 +43,9 @@ export default function App() {
       {
         movies?.length > 0 ? (
           <div className="container">
-            {movies.map((movie) => {
-              <MovieCard movie={movie}/>
-            })}
+            {movies.map((movie) => (
+              <MovieCard key={movie.imdbID} movie={movie}/>
+            ))}
           </div>
         ) : (
           <div className="empty">
@@ -60,3 +56,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;

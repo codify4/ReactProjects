@@ -1,20 +1,22 @@
 
-export const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie: { imdbID, Year, Poster, Title, Type } }) => {
   return (
-    <div className="movie">
+    <div className="movie" key={imdbID}>
         <div>
             <p>{Year}</p>
         </div>
 
         <div>
-            <img src={movie !== 'N/A' ? movie.Poster : 'https://via.placeholder.com/400'} 
-                 alt={movie.Title} />  
+            <img src={Poster !== 'N/A' ? Poster : 'https://via.placeholder.com/400'} 
+                 alt={Title} />  
         </div>  
 
         <div>
-            <span>{movie.Type}</span>
-            <h3>{movie.Title}</h3>
+            <span>{Type}</span>
+            <h3>{Title}</h3>
         </div>
     </div>
   )
 }
+
+export default MovieCard;
