@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 
 const ExpenseTracker = ( { onExpensesChange }) => {
 
-    const [expenses, setExpenses] = useState(0);
-    const [housing, setHousing] = useState(0);
-    const [food, setFood] = useState(0);
-    const [transportation, setTransportation] = useState(0);
-    const [healthcare, setHealthcare] = useState(0);
+    const [expenses, setExpenses] = useState();
+    const [housing, setHousing] = useState();
+    const [food, setFood] = useState();
+    const [transportation, setTransportation] = useState();
+    const [healthcare, setHealthcare] = useState();
 
     const calculateExpenses = (event) => {
         event.preventDefault();
