@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ExpenseTracker = () => {
+const ExpenseTracker = ( { onExpensesChange }) => {
 
     const [expenses, setExpenses] = useState(0);
     const [housing, setHousing] = useState(0);
@@ -14,6 +14,7 @@ const ExpenseTracker = () => {
         let expenses = Number(housing) + Number(food) + Number(transportation) + Number(healthcare);
 
         setExpenses(expenses);
+        onExpensesChange(expenses);
     }
 
     return (
@@ -52,14 +53,12 @@ const ExpenseTracker = () => {
                             onChange={ (e) => setHealthcare(e.target.value) }
                         />
                     </label>
-                    
                 </div>
 
-                <button 
-                    className='bg-green-600 hover:bg-green-500 w-24 
+                <button className='bg-green-600 hover:bg-green-500 w-60
                     rounded text-xl'
                     type='submit'>
-                    Calculate
+                    Calculate Expenses
                 </button>
             </form>
 

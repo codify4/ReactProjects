@@ -3,12 +3,17 @@ import ExpenseTracker from "./ExpenseTracker";
 
 const Profit = () => {
 
+    const [expensesValue, setExpensesValue] = useState(0);
     const [income, setIncome] = useState(0);
     const [profit, setProfit] = useState(0);
 
-    const calculateProfit = () => {
+    const handleExpensesChange = (expenses) => {
+        setExpensesValue(expenses);
+    }
 
-        setProfit(p);
+    const calculateProfit = () => {
+        const calculatedProfit = income - expensesValue;
+        setProfit(calculatedProfit);
     }
     return (
         <div>
@@ -19,10 +24,15 @@ const Profit = () => {
                 />
             </label>
 
-            <ExpenseTracker />
-            
-            <div onChange={calculateProfit}>Your Profit per Month is: ${profit}</div>
+            <ExpenseTracker onExpensesChange={handleExpensesChange} />
 
+            <button className='bg-green-600 hover:bg-green-500 w- 
+                    rounded text-xl'
+                    onClick={calculateProfit}>
+                    Calculate Profit
+            </button>
+            
+            <div>Your Profit per Month is: ${profit}</div>
         </div>
     );
 }
