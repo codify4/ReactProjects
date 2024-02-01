@@ -22,7 +22,10 @@ const ExpenseTracker = ( { onExpensesChange }) => {
             <form onSubmit={calculateExpenses}>
                 <div>
                     <label htmlFor="housing">Housing: $  
-                        <input className='w-24' type="number" value={housing}
+                        <input className='w-24 placeholder-black' 
+                            type="number" 
+                            value={housing} 
+                            placeholder='0'
                             onChange={ (e) => setHousing(e.target.value) }
                         />
                     </label>
@@ -31,17 +34,23 @@ const ExpenseTracker = ( { onExpensesChange }) => {
 
                 <div>
                     <label htmlFor="food">Food: $  
-                        <input className='w-24' type="number" value={food}
-                        onChange={ (e) => setFood(e.target.value) }
-                    />
+                        <input  className='w-24 placeholder-black'
+                                type="number" 
+                                value={food} 
+                                placeholder='0'
+                                onChange={ (e) => setFood(e.target.value) }
+                        />
                     </label>
                     
                 </div>
 
                 <div>
                     <label htmlFor="transportation">Transportation: $  
-                        <input className='w-24' type="number" value={transportation}
-                            onChange={ (e) => setTransportation(e.target.value) }
+                        <input  className='w-24 placeholder-black' 
+                                type="number" 
+                                value={transportation} 
+                                placeholder='0'
+                                onChange={ (e) => setTransportation(e.target.value) }
                         />
                     </label>
                     
@@ -49,14 +58,17 @@ const ExpenseTracker = ( { onExpensesChange }) => {
 
                 <div>
                     <label htmlFor="healthcare">Healthcare: $  
-                        <input className='w-24' type="number" value={healthcare}
-                            onChange={ (e) => setHealthcare(e.target.value) }
+                        <input  className='w-24 placeholder-black' 
+                                type="number" 
+                                value={healthcare} 
+                                placeholder='0'
+                                onChange={ (e) => setHealthcare(e.target.value) }
                         />
                     </label>
                 </div>
 
-                <button className='bg-green-600 hover:bg-green-500 w-60
-                    rounded text-xl'
+                <button className='bg-green-600 hover:bg-green-500 w-
+                    rounded text-xl px-2'
                     type='submit'>
                     Calculate Expenses
                 </button>

@@ -46,7 +46,7 @@ const Profit = () => {
 
             <label htmlFor="">
                 Monthly Income: $ 
-                <input type="number" className="w-24" value={income}
+                <input type="number" className="w-24 placeholder-black" value={income} placeholder='0'
                     onChange={ (e) => setIncome(Number(e.target.value)) }
                 />
             </label>
@@ -54,7 +54,7 @@ const Profit = () => {
             <ExpenseTracker onExpensesChange={handleExpensesChange} />
 
             <button className='bg-green-600 hover:bg-green-500 w- 
-                    rounded text-xl'
+                    rounded text-xl px-2'
                     onClick={calculateProfit}>
                     Calculate Profit
             </button>
