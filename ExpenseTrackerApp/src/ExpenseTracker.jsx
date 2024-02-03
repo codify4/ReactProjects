@@ -24,7 +24,7 @@ const ExpenseTracker = ( { onExpensesChange, country, currency }) => {
     }
 
     return (
-        <div className='flex flex-col justify-center text-start m-2 border rounded-lg p-4 gap-2 hover:ring-1 hover:ring-white hover:ease-in-out hover:delay-100'>
+        <div className='flex flex-col justify-center text-center m-2 border rounded-lg p-4 gap-2 hover:ring-1 hover:ring-white hover:ease-in-out hover:delay-100'>
             <form onSubmit={calculateExpenses} className='pl-11'>
                 <div  className='mb-1'>
                     <label htmlFor="housing">Housing: <span className='pr-1'>{currency[country]}</span>
@@ -73,13 +73,15 @@ const ExpenseTracker = ( { onExpensesChange, country, currency }) => {
                     </label>
                 </div>
 
-                <button className='text-center bg-none border border-green-700  w- rounded-md text-xl px-2 transition hover:bg-green-700 hover:ease-in-out hover:delay-100'
-                    type='submit'>
-                    Calculate Expenses
-                </button>
+                <div className='mr-10'>
+                    <button className='text-center bg-none border border-green-700  w- rounded-md text-xl px-2 transition hover:bg-green-700 hover:ease-in-out hover:delay-100'
+                        type='submit'>
+                        Calculate Expenses
+                    </button>
+                </div>
             </form>
 
-            <div>Your Expenses per Month are: <span className='pr-1'>{currency[country]}</span> {expenses}</div>
+            <div className='text-center'>Your Expenses per Month are: <br/><span className='pr-1'>{currency[country]}</span> {expenses}</div>
         </div>
     );
 }
