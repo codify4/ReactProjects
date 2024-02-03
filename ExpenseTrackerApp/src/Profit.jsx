@@ -64,7 +64,7 @@ const Profit = () => {
                 currency={ countryCurrecies[country] }
             />
 
-            <button className='bg-none border border-green-700  w- rounded-md text-xl px-2 transition hover:bg-green-700 hover:ease-in-out hover:delay-100'
+            <button className='bg-none border border-green-700  w- rounded-md text-xl px-2 transition hover:bg-gradient-to-r hover:from-green-600 hover:via-green-700 hover:to-green-800 hover:ease-in-out hover:delay-100'
                     onClick={calculateProfit}>
                     Calculate Profit
             </button>
