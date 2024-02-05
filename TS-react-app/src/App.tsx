@@ -1,8 +1,10 @@
+import Button from "./Button"
 
 export default function App() {
+
   return (
-    <>
-    <h1 className="text-2xl">Hello </h1>
-    </>
+    <main className="min-h-screen flex justify-center items-center">
+      <Button />
+    </main>
   )
 }
